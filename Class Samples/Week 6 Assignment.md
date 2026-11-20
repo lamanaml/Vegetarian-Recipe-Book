@@ -190,17 +190,17 @@ When you open the PR, check that it's comparing assignment_4 against main. If yo
 ## GRADING
 A note on grading: I review PRs the day after they are submitted (M-Th). If you submit the assignment before Friday of the week this means I can review and grade it and if you are missing points you will have the weekend to update. If you make the changes I've asked for I will bump your grade up as long as your commit is turned in before Monday.
 
-|**points**|	**description**|
-|**Moodle**|	**- turn in through Assignment 4 in Week 6**|
-|10|	provide github link to PR|
-|10|	provide screenshot of python code running in your terminal|
- 	 
-|**GitHub/Code|	- Code will be reviewed on GitHub**|
-|10|	github PR branch is named assignment_4|
-|10|	github PR is left open and not merged until I review|
-|10|	main function has a repeating loop for user options
-|10|	conditional logic in the loop takes user input and chooses appropriate next step/function|
-|10|	updated add_book function to take in a list called library and append the dictionary book to it|
-|10|	the show_menu function displays options and full text provided for "1", "2", and "q", and returns the user's choice|
-|10|	view_books function takes in a list and prints the books, or a message if the list is empty|
-|10|	manual test results are pasted into a GitHub comment from your terminal|
+| **Points** | **Description** |
+|---|---|
+| **Moodle** | Turn in through Assignment 4 in Week 6 |
+| 10 | Provide GitHub link to PR |
+| 10 | Provide screenshot of Python code running in your terminal |
+| **GitHub/Code** | Code will be reviewed on GitHub |
+| 10 | GitHub PR branch is named `assignment_4` |
+| 10 | GitHub PR is left open and not merged until I review |
+| 10 | `main` function has a repeating loop for user options |
+| 10 | Conditional logic in the loop takes user input and chooses the appropriate next step or function |
+| 10 | Updated `add_book` function takes in a list called `library` and appends the dictionary book to it |
+| 10 | `show_menu` function displays the options and the full text provided for `"1"`, `"2"`, and `"q"`, and returns the user’s choice |
+| 10 | `view_books` function takes in a list and prints the books, or a message if the list is empty |
+| 10 | Manual test results are pasted into a GitHub comment from your terminal |
