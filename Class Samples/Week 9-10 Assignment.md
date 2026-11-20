@@ -1,4 +1,4 @@
-Week 9 - Assignment 5: File I/O and Unit Tests
+## Week 9 - Assignment 5: File I/O and Unit Tests
 Books are saved to a file and loaded back the next time the app runs, and our math and formatting are checked by automated tests
 
 The menu and layout don't change this week. What changes is that the books are still there after you quit and start the program again, and you'll have tests that prove parts of your code work without typing anything in by hand.
@@ -78,7 +78,7 @@ What books.csv looks like after the first run:
 title,author,pages,hours
 "The Long Way To A Small, Angry Planet",Becky Chambers,438,10.9
 
-Running the unit tests:
+## Running the unit tests:
 
 % pytest test_book_tracker.py
 ============================= test session starts ==============================
@@ -88,7 +88,7 @@ test_book_tracker.py ......                                              [100%]
 
 ============================== 6 passed in 0.02s ===============================
 
-Overview (from the client)
+## Overview (from the client)
 The client has been adding books through the menu and likes the flow. The problem is that every time they quit, their whole library disappears and they have to type everything in again. They want the app to remember their books between sessions.
 
 "The menu is exactly what I wanted! The only thing is, when I quit, all my books are gone. Can you make it save what I add and have everything there the next time I open it?"
@@ -109,7 +109,7 @@ A new format_book() function returns the numbered line of text for one book, and
 A test file named test_book_tracker.py checks estimate_reading_time() and format_book() with pytest, and every test passes
 The menu, view, and quit behavior from Assignment 4 stay the same
 Same workflow as before: new branch, PR, and main stays clean until review
-Code
+## Code
 Use only what's found in these notes: https://cs50.harvard.edu/python/notes/5/ and https://cs50.harvard.edu/python/notes/6/
 
 From the File I/O notes (6), everything you need is in the open, with, and CSV sections. You can skip the Binary Files and PIL section for this assignment.
@@ -156,14 +156,14 @@ Our books have a problem the notes run into too: the notes use the home "Number 
 
 A bonus: our books are already dictionaries from Assignment 4, and DictWriter and DictReader work with dictionaries.
 
-Why unit tests?
+## Why unit tests?
 So far, every test we've done has been a manual test: run the program, type things in, and check the output with our eyes. That works, but it's slow, and it only checks what we remember to check.
 
 A unit test is code that checks other code. It calls one function (one "unit") with an input we choose and uses assert to check that the function gives back the answer we expect. pytest runs all of those checks at once and tells us which ones passed and which ones failed.
 
 The notes point out an important rule: a function is much easier to test when it returns a value instead of printing it. A test can compare a returned value with ==, but it can't easily check what was printed to the screen. That's why this week we pull the line-building out of view_books() into a new format_book() function that returns the line as a string.
 
-Let's code!
+## Let's code!
 Step 1: Create books.csv
 [ ] Create a new file named books.csv inside the assignment folder, next to book_tracker.py
 [ ] Type this header row as the first and only line, then press Enter so the file ends with a new line:
@@ -338,7 +338,7 @@ Once we have pushed, we can now go over to GitHub and open a PR. This lets the t
 
 When you open the PR, check that it's comparing assignment_5 against main.
 
-Test — Automated
+## Test — Automated
 [ ] pytest test_book_tracker.py runs at least six tests, and all of them pass
 [ ] Temporarily breaking estimate_reading_time() makes the estimate tests fail (then change it back)
 [ ] Temporarily changing the f-string in format_book() makes the format_book tests fail (then change it back)
