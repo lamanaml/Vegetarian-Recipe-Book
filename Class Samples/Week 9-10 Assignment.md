@@ -97,18 +97,18 @@ Our team lead has one more request. As the app grows, testing everything by hand
 
 "Before we add more features, let's get some automated tests in place. Start with the reading-time math and how a book is displayed. Those show up everywhere, so if they break, we want to know right away."
 
-Plan — Business Requirements
-Every book added through menu option 2 is saved to a file named books.csv right away, not just when the user quits
-When the app starts, any books already in books.csv are loaded into the library list before the menu is shown
-Viewing books after a restart shows every book added in earlier sessions, in the order they were added
-Adding a book adds to the file and never erases books that were already saved
-Book titles with commas in them (like The Long Way to a Small, Angry Planet) save and load correctly
-books.csv has a header row (title,author,pages,hours) so the columns match the dictionary keys from Assignment 4
-Loaded books have the same shape as newly added books: pages is a whole number and hours is a decimal number
-A new format_book() function returns the numbered line of text for one book, and view_books() uses it
-A test file named test_book_tracker.py checks estimate_reading_time() and format_book() with pytest, and every test passes
-The menu, view, and quit behavior from Assignment 4 stay the same
-Same workflow as before: new branch, PR, and main stays clean until review
+## Plan — Business Requirements
+- Every book added through menu option 2 is saved to a file named books.csv right away, not just when the user quits
+- When the app starts, any books already in books.csv are loaded into the library list before the menu is shown
+- Viewing books after a restart shows every book added in earlier sessions, in the order they were added
+- Adding a book adds to the file and never erases books that were already saved
+- Book titles with commas in them (like The Long Way to a Small, Angry Planet) save and load correctly
+- books.csv has a header row (title,author,pages,hours) so the columns match the dictionary keys from Assignment 4
+- Loaded books have the same shape as newly added books: pages is a whole number and hours is a decimal number
+- A new format_book() function returns the numbered line of text for one book, and view_books() uses it
+- A test file named test_book_tracker.py checks estimate_reading_time() and format_book() with pytest, and every test passes
+- The menu, view, and quit behavior from Assignment 4 stay the same
+- Same workflow as before: new branch, PR, and main stays clean until review
 ## Code
 Use only what's found in these notes: https://cs50.harvard.edu/python/notes/5/ and https://cs50.harvard.edu/python/notes/6/
 
@@ -120,7 +120,7 @@ Before we code, let's make sure we're on the right branch. This week builds on y
 
 If your assignment_4 PR has been merged, your code is on main. Start from main.
 If your assignment_4 PR is still open, your code is only on assignment_4. Start from assignment_4. If you start from main, your menu loop and view_books() from Assignment 4 won't be there.
-VSCode:
+## VSCode:
 If you're using VSCode:
 
 Check the Source Control tab on the left
@@ -130,26 +130,26 @@ Click the ... menu in the Source Control tab and choose Pull to get the latest c
 Click on the branch name in the bottom left again and select create a new branch
 Type assignment_5 and press enter
 Open assignment/book_tracker.py and make sure your Assignment 4 functions are there
-Terminal:
+## Terminal:
 If you're using the terminal:
 
-Check if there are any current changes and note our current branch:
+- Check if there are any current changes and note our current branch:
 git status
 
-Switch to the branch that has your Assignment 4 code. Use main if Assignment 4 was merged, or assignment_4 if it wasn't:
+- Switch to the branch that has your Assignment 4 code. Use main if Assignment 4 was merged, or assignment_4 if it wasn't:
 git checkout main or git checkout assignment_4
 
-Get any changes from the repo on GitHub:
+- Get any changes from the repo on GitHub:
 git pull
 
-Now create the new branch and switch to it:
+- Now create the new branch and switch to it:
 git checkout -b assignment_5
 
-Check that everything looks good:
+- Check that everything looks good:
 git status
 
-We should have no file changes and be on branch assignment_5. Open assignment/book_tracker.py and make sure your Assignment 4 functions are there.
-Why CSV, and why the csv library?
+- We should have no file changes and be on branch assignment_5. Open assignment/book_tracker.py and make sure your Assignment 4 functions are there.
+## Why CSV, and why the csv library?
 In the notes, a plain text file with one name per line works fine until each line needs to hold more than one value. A CSV ("comma separated values") file holds one record per line, with each value separated by a comma.
 
 Our books have a problem the notes run into too: the notes use the home "Number Four, Privet Drive", and we have the title The Long Way To A Small, Angry Planet. Both have a comma inside the value. If we wrote the file ourselves and read it back with .split(","), Python would think that title was two separate values. The notes show the fix: Python's built-in csv library. csv.DictWriter puts quotes around values that contain commas when it writes, and csv.DictReader understands those quotes when it reads. You don't need to add the quotes yourself.
